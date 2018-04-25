@@ -15,7 +15,7 @@ sudo apt-get update && apt-get install -y apt-transport-https
 sudo su -
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
-sudo apt-get install -y kubelet 
+sudo apt-get install -y kubectl 
 ```
 ###### minikube:
 ```
