@@ -1,6 +1,7 @@
 # kubernetes-demo
 
 ## Install Docker machine driver for KVM
+apt-get update && apt-get install curl
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 
@@ -9,8 +10,11 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-
 ###### kubectl:
 ```
 sudo apt-get update && apt-get install -y apt-transport-https
+
+# become root user to add keys
+sudo su -
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
 sudo apt-get install -y kubelet 
 ```
 ###### minikube:
