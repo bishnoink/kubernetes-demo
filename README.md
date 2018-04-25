@@ -22,6 +22,12 @@ sudo apt-get install -y kubelet
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.26.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 ```
 
+###### start minikube
+
+```
+minikube start --vm-driver=kvm2
+```
+
 ## Interact with minikube local cluster
 ```
 kubectl cluster-info
