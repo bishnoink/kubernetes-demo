@@ -1,10 +1,10 @@
 # kubernetes-demo
 
-##Install Docker machine driver for KVM
+## Install Docker machine driver for KVM
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 
-######Install minikube, kubectl
+###### Install minikube, kubectl
 
 kubectl:
 ```
@@ -18,7 +18,7 @@ minikube:
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.26.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 ```
 
-#Interact with minikube local cluster
+## Interact with minikube local cluster
 ```
 kubectl cluster-info
 kubectl cluster-info dump
@@ -36,6 +36,6 @@ curl http://<CLUSTER-PUBLIC-IP>:<NODE PORT>
 kubectl delete service example-service
 kubectl delete deployment hello-world
 ```
-######clone repo
+###### clone repo
 
 https://github.com/bishnoink/kubernetes-demo.git
