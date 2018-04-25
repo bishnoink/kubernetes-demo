@@ -4,16 +4,16 @@
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 
-###### Install minikube, kubectl
+## Install minikube, kubectl
 
-kubectl:
+###### kubectl:
 ```
 sudo apt-get update && apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo apt-get install -y kubelet 
 ```
-minikube:
+###### minikube:
 ```
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.26.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 ```
@@ -36,6 +36,3 @@ curl http://<CLUSTER-PUBLIC-IP>:<NODE PORT>
 kubectl delete service example-service
 kubectl delete deployment hello-world
 ```
-###### clone repo
-
-https://github.com/bishnoink/kubernetes-demo.git
