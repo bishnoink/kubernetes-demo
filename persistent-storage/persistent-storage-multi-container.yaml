@@ -15,7 +15,7 @@ spec:
     env:
     - name: GIT_REPO
       value: http://github.com/bishnoink/kubernetes-demo.git
-    volumeMount:
+    volumeMounts:
     - mountPath: /data
       name: www-data
   volumes:
