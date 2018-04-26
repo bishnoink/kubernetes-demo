@@ -9,7 +9,7 @@ spec:
     volumeMounts:
     - mountPath: /srv/www
       name: www-data
-      ReadOnly: true
+      readOnly: true
   - name: git-monitor
     image: kubernetes/git-monitor
     env:
