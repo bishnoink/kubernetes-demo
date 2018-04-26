@@ -1,6 +1,7 @@
 # kubernetes-demo
 
 ## Install Docker machine driver for KVM
+apt-get update && apt-get install curl
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 
@@ -9,13 +10,25 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-
 ###### kubectl:
 ```
 sudo apt-get update && apt-get install -y apt-transport-https
+
+# become root user to add keys
+sudo su -
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get install -y kubelet 
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+
+sudo apt-get update && sudo apt-get install -y kubectl
 ```
 ###### minikube:
 ```
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.26.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
+
+###### start minikube
+
+```
+minikube start --vm-driver=kvm2
 ```
 
 ## Interact with minikube local cluster
