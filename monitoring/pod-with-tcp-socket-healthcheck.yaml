@@ -9,7 +9,7 @@ spec:
     livenessProbe:
       tcpSocket:
         port: 6379
-      initialDeaySeconds: 30
+      initialDelaySeconds: 30
       timeputSeconds: 1
     ports:
     - containerPort: 6379
